@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+/* Credit Card */
+
 .credit-card {
   display: flex;
   flex-direction: column;
@@ -30,4 +32,43 @@
 
 .credit-card p span {
   margin-left: 20px;
+}
+
+/* Driver Card */
+
+.driver-card  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 800px;
+  color: #fff;
+  background-color: #27d;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 15px;
+}
+
+.driver-card img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.driver-card .review {
+  text-align: start;
+}
+
+.driver-card h3 {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.driver-card p {
+  margin: 0;
+}
+
+.driver-card .card p {
+  font-size: 2rem;
 }
