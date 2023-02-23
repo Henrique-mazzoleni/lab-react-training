@@ -6,7 +6,7 @@ export default function IdCard (props) {
             <p>Last name: {props.lastName}</p>
             <p>Gender: {props.gender}</p>
             <p>Height: {props.height}m</p>
-            <p>Birth: {props.birth.toString()}</p>
+            <p>Birth: {props.birth.toDateString()}</p>
         </div>
     </div>
 }
