@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import IdCard from './components/IdCard';
+import berlinData from './data/berlin.json';
+
 import './App.css';
 
 function App() {
+  const { firstName, lastName, img: picture} = berlinData[0]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <IdCard firstName={firstName} lastName={lastName} gender="fluid" picture={picture} birth={new Date()} height="1.70" />
     </div>
   );
 }
