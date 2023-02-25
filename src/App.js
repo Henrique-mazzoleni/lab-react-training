@@ -1,28 +1,36 @@
 import IdCard from './components/IdCard';
 import Greetings from './components/Greetings';
 import Random from './components/Random';
-import berlinData from './data/berlin.json';
 import BoxColor from './components/BoxColor';
 import CreditCard from './components/CreditCard';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
+import LikeButton from './components/LikeButton';
 
 import './App.css';
 
 function App() {
-  const { firstName, lastName, img: picture } = berlinData[0];
-
   return (
     <div className="App">
       <IdCard
-        firstName={firstName}
-        lastName={lastName}
-        gender="fluid"
-        picture={picture}
-        birth={new Date()}
-        height="1.70"
+        lastName="Doe"
+        firstName="John"
+        gender="male"
+        height={178}
+        birth={new Date('1992-07-14')}
+        picture="https://randomuser.me/api/portraits/men/44.jpg"
       />
-      <Greetings lang="fr ">{firstName}</Greetings>
+
+      <IdCard
+        lastName="Delores "
+        firstName="Obrien"
+        gender="female"
+        height={172}
+        birth={new Date('1988-05-11')}
+        picture="https://randomuser.me/api/portraits/women/44.jpg"
+      />
+      <Greetings lang="de">Ludwig</Greetings>
+      <Greetings lang="fr">François</Greetings>
       <Random max="3" min="1" />
       <BoxColor r="250" g="100" b="200" />
       <CreditCard
@@ -84,6 +92,8 @@ function App() {
           licensePlate: 'BE33ER',
         }}
       />
+
+      <LikeButton />
     </div>
   );
 }

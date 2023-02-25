@@ -2,6 +2,22 @@
   text-align: center;
 }
 
+/* Id Card */
+
+.id-card {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 5px auto;
+  width: 800px;
+  border: 1px solid #000;
+}
+
+.id-card .card-information p {
+  text-align: start;
+  margin: 0 10px ;
+}
+
 /* Credit Card */
 
 .credit-card {
