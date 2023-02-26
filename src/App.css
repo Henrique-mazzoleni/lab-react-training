@@ -88,3 +88,14 @@
 .driver-card .card p {
   font-size: 2rem;
 }
+
+.nums-table {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nums-table div {
+  padding: 30px 20px;
+  flex-basis: 38px;
+  border: 1px solid black;
+}
