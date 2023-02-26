@@ -14,8 +14,33 @@ import Facebook from './components/Facebook';
 
 import './App.css';
 import berlinArray from './data/berlin.json';
+import { useState } from 'react';
 
 function App() {
+  const [countrySelected, setCountrySelected] = useState('All')
+  const [displayArray, setDisplayArray] = useState(berlinArray)
+
+  const countries = berlinArray.map(member => member.country).filter((country, i, arr) => arr.indexOf(country) === i)
+  countries.unshift('All')
+
+  const countryHandler = (country) => {
+    setCountrySelected(country)
+  }
+
+  const sortHandler = (sortParameter) => {
+    displayArray.sort((a, b) => {
+      if (a[sortParameter] > b[sortParameter]) return 1
+      else return -1
+    })
+    setDisplayArray([...displayArray])
+  }
+
+  const searchHandler = (event) => {
+    setDisplayArray(berlinArray.filter(member => Object.values(member).some(
+      field => typeof field === 'string' && field.toLowerCase().includes(event.target.value.toLowerCase())
+    )))
+  }
+
   return (
     <div className="App">
       <IdCard
@@ -116,7 +141,16 @@ function App() {
 
       <NumsTable limit={120} />
 
-      {berlinArray.map(member => <Facebook key={member.img} {...member} />)}
+      <button onClick={sortHandler.bind(null, 'firstName')}>Sort by first name</button>
+      <button onClick={sortHandler.bind(null, 'lastName')}>Sort by last name</button>
+      <button onClick={sortHandler.bind(null, 'country')}>Sort by country</button>
+
+        <label>Search
+          <input type="text" onChange={searchHandler} />
+        </label>
+      {countries.sort().map(country => <button style={country === countrySelected ? {backgroundColor: '#A3D2E2'} : {}} onClick={countryHandler.bind(null, country)}>{country}</button>)}
+
+      {displayArray.map(member => <Facebook isSelected={countrySelected === member.country || countrySelected === 'All'} key={member.img} {...member} />)}
     </div>
   );
 }
