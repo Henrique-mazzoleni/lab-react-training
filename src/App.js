@@ -10,8 +10,10 @@ import ClickablePicture from './components/ClickablePicture';
 import Dice from './components/Dice';
 import Carousel from './components/Carousel';
 import NumsTable from './components/NumsTable';
+import Facebook from './components/Facebook';
 
 import './App.css';
+import berlinArray from './data/berlin.json';
 
 function App() {
   return (
@@ -113,6 +115,8 @@ function App() {
       />
 
       <NumsTable limit={120} />
+
+      {berlinArray.map(member => <Facebook key={member.img} {...member} />)}
     </div>
   );
 }

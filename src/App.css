@@ -4,7 +4,8 @@
 
 /* Id Card */
 
-.id-card {
+.id-card,
+.facebook-card {
   display: flex;
   align-items: center;
   padding: 5px;
@@ -13,9 +14,14 @@
   border: 1px solid #000;
 }
 
-.id-card .card-information p {
+.id-card .card-information p,
+.facebook-card .card-information p {
   text-align: start;
   margin: 0 10px ;
+}
+
+.facebook-card img {
+  height: 150px;
 }
 
 /* Credit Card */
