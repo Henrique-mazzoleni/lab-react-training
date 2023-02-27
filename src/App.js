@@ -12,6 +12,7 @@ import Carousel from './components/Carousel';
 import NumsTable from './components/NumsTable';
 import Facebook from './components/Facebook';
 import SignupPage from './components/SignupPage';
+import RGBColorPicker from './components/RGBColorPicker';
 
 import './App.css';
 import berlinArray from './data/berlin.json';
@@ -52,6 +53,8 @@ function App() {
 
   return (
     <div className="App">
+      <RGBColorPicker />  
+
       <SignupPage />
       
       <IdCard
